@@ -54,7 +54,7 @@ namespace PromotionEngine.Test
         private Engine GetEngine()
         {
             MultiplierRule ruleA = new MultiplierRule("A", 3, 130);
-            MultiplierRule ruleB = new MultiplierRule("B", 3, 45);
+            MultiplierRule ruleB = new MultiplierRule("B", 2, 45);
             AlliesRule ruleCD = new AlliesRule("C", "D");
 
             Engine engine = new Engine(new List<IRule> { ruleA, ruleB, ruleCD });
