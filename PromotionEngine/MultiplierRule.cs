@@ -8,6 +8,16 @@ namespace PromotionEngine
 {
     public class MultiplierRule : IRule
     {
+        public MultiplierRule(string name, int multiplier)
+        {
+            Name = name;
+            Multiplier = multiplier;
+        }
+
+        public string Name { get; }
+
+        public int Multiplier { get; }
+
         public int Execute(IEnumerable<Sku> skus)
         {
             throw new NotImplementedException();
