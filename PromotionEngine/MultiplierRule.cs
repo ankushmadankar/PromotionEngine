@@ -8,7 +8,7 @@ namespace PromotionEngine
 {
     public class MultiplierRule : IRule
     {
-        public MultiplierRule(string name, int multiplier)
+        public MultiplierRule(string name, int multiplier, int promotionPrice)
         {
             Name = name;
             Multiplier = multiplier;
