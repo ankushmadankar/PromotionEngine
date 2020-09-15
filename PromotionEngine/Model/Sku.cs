@@ -6,19 +6,14 @@ namespace PromotionEngine.Model
 {
     public class Sku
     {
-		private string name;
-		private int skuValue;
+        public Sku(string name, int value)
+        {
+            Name = name;
+            SkuValue = value;
+        }
 
-		public string Name
-		{
-			get { return name; }
-			set { name = value; }
-		}
+        public string Name { get; }
 
-		public int SkuValue
-		{
-			get { return skuValue; }
-			set { skuValue = value; }
-		}
-	}
+        public int SkuValue { get; }
+    }
 }
