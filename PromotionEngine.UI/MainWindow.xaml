@@ -5,8 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PromotionEngine.UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="220" Width="360" MinHeight="220" MinWidth="360" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:MainWindowViewModel></local:MainWindowViewModel>
+    </Window.DataContext>
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="SKU A" VerticalAlignment="Center" Margin="4"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SkuAQuantity}" HorizontalContentAlignment="Right" Margin="2"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="SKU B" VerticalAlignment="Center" Margin="4" />
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SkuBQuantity}" Margin="2" HorizontalContentAlignment="Right"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="SKU C" VerticalAlignment="Center" Margin="4" />
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding SkuCQuantity}" Margin="2" HorizontalContentAlignment="Right"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="SKU D" VerticalAlignment="Center" Margin="4" />
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding SkuDQuantity}" Margin="2" HorizontalContentAlignment="Right"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Result" VerticalAlignment="Center" Margin="4" />
+        <TextBox Grid.Row="4" Grid.Column="1" IsReadOnly="True" Text="{Binding Result}" Margin="2" HorizontalContentAlignment="Right"/>
+        
+        <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" Margin="4" HorizontalAlignment="Right">
+            <Button Content="Reset" Command="{Binding ResetCommand}" Width="80" Margin="2" HorizontalAlignment="Right"></Button>
+            <Button Content="Calculate" Command="{Binding CalculateCommand}" Width="80" Margin="2" HorizontalAlignment="Right"></Button>
+        </StackPanel>
     </Grid>
 </Window>

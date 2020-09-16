@@ -11,7 +11,7 @@ namespace PromotionEngine.Test
         [TestMethod]
         public void ScenarioOne()
         {
-            Engine engine = GetEngine();
+            Engine engine = Engine.GetTestEngine();
 
             Sku skuA = new Sku("A", 50);
             Sku skuB = new Sku("B", 30);
@@ -32,7 +32,7 @@ namespace PromotionEngine.Test
         [TestMethod]
         public void ScenarioTwo()
         {
-            Engine engine = GetEngine();
+            Engine engine = Engine.GetTestEngine();
 
             Sku skuA = new Sku("A", 50);
             Sku skuB = new Sku("B", 30);
@@ -53,7 +53,7 @@ namespace PromotionEngine.Test
         [TestMethod]
         public void ScenarioThree()
         {
-            Engine engine = GetEngine();
+            Engine engine = Engine.GetTestEngine();
 
             Sku skuA = new Sku("A", 50);
             Sku skuB = new Sku("B", 30);
@@ -71,17 +71,6 @@ namespace PromotionEngine.Test
             int result = engine.Execute(skuValues);
 
             Assert.AreEqual(280, result);
-        }
-
-        private Engine GetEngine()
-        {
-            MultiplierRule ruleA = new MultiplierRule("A", 3, 130);
-            MultiplierRule ruleB = new MultiplierRule("B", 2, 45);
-            AlliesRule ruleCD = new AlliesRule("C", "D", 30);
-
-            Engine engine = new Engine(new List<IRule> { ruleA, ruleB, ruleCD });
-
-            return engine;
         }
     }
 }
