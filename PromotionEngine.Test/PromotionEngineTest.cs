@@ -17,7 +17,14 @@ namespace PromotionEngine.Test
             Sku skuB = new Sku("B", 30);
             Sku skuC = new Sku("C", 20);
 
-            int result = engine.Execute(new List<Sku> { skuA, skuB, skuC });
+            Dictionary<Sku, int> skuValues = new Dictionary<Sku, int>()
+            {
+                {skuA, 1},
+                {skuB, 1},
+                {skuC, 1}
+            };
+
+            int result = engine.Execute(skuValues);
 
             Assert.AreEqual(100, result);
         }
@@ -31,7 +38,14 @@ namespace PromotionEngine.Test
             Sku skuB = new Sku("B", 30);
             Sku skuC = new Sku("C", 20);
 
-            int result = engine.Execute(new List<Sku> { skuA, skuA, skuA, skuA, skuA, skuB, skuB, skuB, skuB, skuB, skuC });
+            Dictionary<Sku, int> skuValues = new Dictionary<Sku, int>()
+            {
+                {skuA, 5},
+                {skuB, 5},
+                {skuC, 1}
+            };
+
+            int result = engine.Execute(skuValues);
 
             Assert.AreEqual(370, result);
         }
@@ -46,7 +60,15 @@ namespace PromotionEngine.Test
             Sku skuC = new Sku("C", 20);
             Sku skuD = new Sku("D", 20);
 
-            int result = engine.Execute(new List<Sku> { skuA, skuA, skuA, skuB, skuB, skuB, skuB, skuB, skuC, skuD });
+            Dictionary<Sku, int> skuValues = new Dictionary<Sku, int>()
+            {
+                {skuA, 3},
+                {skuB, 5},
+                {skuC, 1},
+                {skuD, 1}
+            };
+
+            int result = engine.Execute(skuValues);
 
             Assert.AreEqual(280, result);
         }

@@ -12,8 +12,14 @@ namespace PromotionEngine.Model
             SkuValue = value;
         }
 
+        /// <summary>
+        /// Name of SKU
+        /// </summary>
         public string Name { get; }
 
+        /// <summary>
+        /// Actual value/price of SKU.
+        /// </summary>
         public int SkuValue { get; }
     }
 }

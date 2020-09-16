@@ -16,13 +16,14 @@ namespace PromotionEngine
             this.rules = rules;
         }
 
-        public int Execute(IEnumerable<Sku> skues)
+        public int Execute(IReadOnlyDictionary<Sku, int> skues)
         {
-            if (rules == null || !rules.Any()) return 0;
+            if (rules == null || !rules.Any())
+                return 0;
 
             int sum = 0;
 
-            foreach(IRule rule in rules)
+            foreach (IRule rule in rules)
             {
                 sum += rule.Execute(skues);
             }
